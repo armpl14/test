@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Online Shop</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        .item { margin-bottom: 1em; }
+        .cart { position: fixed; top: 1em; right: 1em; background: #eee; padding: 1em; }
+        button { margin-left: 1em; }
+    </style>
+</head>
+<body>
+<div class="cart">Cart items: <span id="cart-count">0</span></div>
+<h1>Welcome to the Online Shop</h1>
+<div id="items"></div>
+<script>
+const products = [
+    { id: 1, name: 'Laptop', price: 799 },
+    { id: 2, name: 'Smartphone', price: 599 },
+    { id: 3, name: 'Headphones', price: 99 }
+];
+let cartCount = 0;
+function renderItems() {
+    const container = document.getElementById('items');
+    products.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'item';
+        div.innerHTML = `${p.name} - $${p.price} <button onclick="addToCart()">Add to cart</button>`;
+        container.appendChild(div);
+    });
+}
+function addToCart() {
+    cartCount += 1;
+    document.getElementById('cart-count').textContent = cartCount;
+}
+renderItems();
+</script>
+</body>
+</html>
