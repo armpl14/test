@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String[] cars = {"BMW", "Audi", "Mazda"};
+        String[] cars = {"BMW", "Audi", "Mazda", "Mazda"};
 
 
         for(String car : cars){
